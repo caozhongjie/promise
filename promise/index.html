@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="index.js"></script>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    let p = new HD((resolve, reject) => {
+        // resolve('解决')
+        reject('拒绝')
+    }).then(res => {
+        console.log(res)
+    }, reason => {
+        console.log(reason)
+    })
+
+</script>
