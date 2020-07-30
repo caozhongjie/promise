@@ -17,14 +17,14 @@ class HD{
         if(this.status === HD.PENDING) { // 让状态不可更改，只能从pending->resolve
             this.status = HD.FULFILLED
             this.value = value
-            // this.callbacks.map(callback => {
-            //     callback.onFulfilled(value)
-            // })
-            if(this.callbacks.length > 0) {
-                this.callbacks.map(callback => {
-                    callback.onFulfilled(value)
-                })
-            }
+            this.callbacks.map(callback => {
+                callback.onFulfilled(value)
+            })
+            // if(this.callbacks.length > 0) {
+            //     this.callbacks.map(callback => {
+            //         callback.onFulfilled(value)
+            //     })
+            // }
         }
     }
     reject(reason) {
