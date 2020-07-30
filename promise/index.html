@@ -11,12 +11,17 @@
 </html>
 <script>
     let p = new HD((resolve, reject) => {
-        // resolve('解决')
-        reject('拒绝')
+        // setTimeout(()=> {
+        //     console.log(22222)
+        //     resolve('解决')
+        //     //reject('拒绝')
+        // })
+        resolve('解决')
+        // reject('拒绝')
     }).then(res => {
         console.log(res)
     }, reason => {
         console.log(reason)
     })
-
+    console.log(12312312)
 </script>
