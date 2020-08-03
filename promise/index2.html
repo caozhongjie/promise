@@ -10,10 +10,17 @@
 </html>
 <script>
     new Promise((resolve, reject) => {
-        console.log(1111)
-        resolve('解决')
+        setTimeout(() => {
+            reject('解决')
+        },1000)
     }).then(res => {
         console.log(res)
+        return 'aaa'
+    }, reason => {
+        console.log(reason)
+        return 'ahsdhaisdas'
     })
-    console.log(2222)
+    .then((value => {
+        console.log(value)
+    }))
 </script>
