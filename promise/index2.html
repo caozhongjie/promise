@@ -9,18 +9,15 @@
 </body>
 </html>
 <script>
-    new Promise((resolve, reject) => {
-        setTimeout(() => {
-            reject('解决')
-        },1000)
-    }).then(res => {
-        console.log(res)
-        return 'aaa'
+    let p1 = new Promise((resolve, reject) => {
+        resolve('resolve1')
+    })
+    let p2 = new Promise((resolve, reject) => {
+        reject('reject1')
+    })
+    Promise.all([p1, p2]).then(value => {
+        console.log(value)
     }, reason => {
         console.log(reason)
-        return 'ahsdhaisdas'
     })
-    .then((value => {
-        console.log(value)
-    }))
 </script>

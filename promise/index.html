@@ -4,22 +4,30 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="index.js"></script>
+    <script src="myPromise.js"></script>
 </head>
 <body>
 
 </body>
 </html>
 <script>
-    let p = new HD((resolve, reject) => {
-        resolve('解决')
+    new MyPromise((resolve, reject) => {
+        setTimeout(() => {
+            reject('111')
+        })
     })
-        .then(res => {
-           return '调用下一轮'
+    .then()
+    .then(value => {
+        console.log(value)
+    }, reason =>{
+        return '新的1111'
+    })
+    .then(value => {
+        return new MyPromise((resolve, reject) => {
+            resolve('aaa')
         })
-        .then(value => {
-            console.log(value)
-        }, reason => {
-            console.log(reason)
-        })
-
+    })
+    .then(value => {
+        console.log(value)
+    })
 </script>
